@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% import 'components/ui.html' as ui with context %}
+{#- Served by GitHub Pages for any missing address. Bilingual, because we cannot know the visitor's language here. -#}
+{% block header %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block float %}{% endblock %}
+{% block main %}
+<section class="section" style="min-height:80vh;display:grid;place-items:center;text-align:center">
+  <div class="wrap">
+    <div class="glass contact__box" style="max-width:560px;margin-inline:auto">
+      <a class="brand" href="{{ site_root }}" aria-label="Dusur · دسر" style="display:inline-block;margin-bottom:22px">{{ ui.logo('stacked', 'Dusur · دسر') }}</a>
+      <h1 style="font-size:1.6rem;line-height:1.5;margin-bottom:10px">{{ ar.notfound.title }} · {{ en.notfound.title }}</h1>
+      <p lang="ar" dir="rtl">{{ ar.notfound.text }}</p>
+      <p lang="en" dir="ltr">{{ en.notfound.text }}</p>
+      <div class="cta-row">
+        <a class="btn btn--primary" href="{{ site_root }}" lang="ar">{{ ar.notfound.back }}</a>
+        <a class="btn btn--ghost" href="{{ site_root }}en/" lang="en">{{ en.notfound.back }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

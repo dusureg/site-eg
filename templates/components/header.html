@@ -1,0 +1,30 @@
+{% import 'components/ui.html' as ui with context %}
+{#- Navbar + language switcher + theme switcher. One component, used on the home page. -#}
+<header class="site-header" id="top">
+  <div class="wrap bar">
+    <a class="brand" href="{{ urls.self }}" aria-label="{{ t.a11y.home }}">
+      {{ ui.logo('ar' if lang == 'ar' else 'latin', t.meta.logo_alt) }}
+    </a>
+
+    <nav class="nav" id="nav" aria-label="{{ t.a11y.nav }}">
+      {%- for id in nav_order %}
+      <a href="#{{ id }}">{{ t.nav[id] }}</a>
+      {%- endfor %}
+      {{ ui.btn(t.nav.cta, '#contact', 'primary', 'wa') }}
+    </nav>
+
+    <div class="tools">
+      <div class="seg" role="group" aria-label="{{ t.a11y.lang_group }}">
+        <a href="{{ urls.ar }}" hreflang="ar" lang="ar" data-lang="ar"{% if lang == 'ar' %} aria-current="true"{% endif %} aria-label="{{ t.a11y.lang_ar }}">AR</a>
+        <a href="{{ urls.en }}" hreflang="en" lang="en" data-lang="en"{% if lang == 'en' %} aria-current="true"{% endif %} aria-label="{{ t.a11y.lang_en }}">EN</a>
+      </div>
+      <button type="button" class="icon-btn theme-btn" data-to-light="{{ t.a11y.theme_to_light }}" data-to-dark="{{ t.a11y.theme_to_dark }}" aria-label="{{ t.a11y.theme_to_light }}">
+        {{ ui.icon('sun', 'i-sun') }}{{ ui.icon('moon', 'i-moon') }}
+      </button>
+      {{ ui.btn(t.nav.cta, '#contact', 'primary', None, 'sm') }}
+      <button type="button" class="icon-btn menu-btn" aria-expanded="false" aria-controls="nav" data-open="{{ t.a11y.menu }}" data-close="{{ t.a11y.close }}" aria-label="{{ t.a11y.menu }}">
+        {{ ui.icon('menu') }}
+      </button>
+    </div>
+  </div>
+</header>

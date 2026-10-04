@@ -1,0 +1,30 @@
+{% import 'components/ui.html' as ui with context %}
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer__grid">
+      <div>
+        {{ ui.logo('stacked', t.meta.logo_alt) }}
+        <p>{{ t.footer.blurb }}</p>
+      </div>
+      <nav aria-label="{{ t.footer.explore }}">
+        <p class="footer__title">{{ t.footer.explore }}</p>
+        <ul class="footer__list">
+          {%- for id in nav_order %}
+          <li><a href="#{{ id }}">{{ t.nav[id] }}</a></li>
+          {%- endfor %}
+        </ul>
+      </nav>
+      <div>
+        <p class="footer__title">{{ t.footer.reach }}</p>
+        <ul class="footer__list">
+          <li><a href="{{ wa_link(t.contact.wa) }}" target="_blank" rel="noopener">WhatsApp</a></li>
+          <li><a class="phone" href="tel:{{ site.phone_e164 }}">{{ site.phone_display }}</a></li>
+          {%- for s in socials %}
+          <li><a href="{{ s.url }}" target="_blank" rel="noopener">{{ s.label }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bar"><span>© {{ year }} {{ t.footer.rights }}</span></div>
+  </div>
+</footer>

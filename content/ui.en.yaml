@@ -1,0 +1,202 @@
+# English interface — must mirror the structure of ui.ar.yaml exactly (build.py checks this).
+lang: en
+dir: ltr
+locale: en_US
+og_locale_alt: ar_EG
+
+meta:
+  site_name: Dusur
+  title: Dusur | Custom Wood Kitchens, Dressing Rooms & Joinery in Egypt
+  description: Custom wood kitchens, dressing rooms, TV and bathroom units, joinery, and restaurant, cafe and shop fit-outs in Egypt. Measured, designed and installed by one team.
+  logo_alt: Dusur woodwork logo
+
+a11y:
+  skip: Skip to content
+  home: Dusur — home page
+  nav: Main navigation
+  menu: Open menu
+  close: Close
+  lang_group: Site language
+  lang_ar: العربية
+  lang_en: English
+  theme_to_light: Switch to light mode
+  theme_to_dark: Switch to dark mode
+  whatsapp: Chat with us on WhatsApp
+  filter_group: Filter projects by sector
+  prev: Previous project
+  next: Next project
+
+nav:
+  services: Services
+  work: Our work
+  business: For business
+  contracting: Joinery & contracting
+  contact: Contact
+  cta: Get a quote
+
+hero:
+  title: Details built to last
+  text: Dusur makes custom woodwork — kitchens, dressing rooms, TV units, bathroom units and joinery. We measure, design and follow the build through to installation, with one team accountable to you.
+  cta: Chat on WhatsApp
+  cta2: See our services
+  art: Drawing of an interlocking wooden joint, the dusur
+
+why:
+  title: Why Dusur
+  lead: Four commitments behind every project.
+  items:
+    - t: Materials built for daily use
+      d: We choose surfaces and hardware for how you will actually use them.
+    - t: Precise workmanship
+      d: We inspect parts and assembly before anything leaves for your site.
+    - t: Made to your measurements
+      d: Layout, colour and storage follow your space and your habits.
+    - t: One team accountable
+      d: From measuring to installation, you deal with a single team.
+
+services:
+  title: What we make
+  lead: Five lines of woodwork, designed around your space and the way you live.
+  items:
+    - t: Wood kitchens
+      d: Practical layouts, base and wall units, and hardware chosen for everyday use.
+      alt: Design concept of a custom wood kitchen with wall and base units
+    - t: Dressing rooms
+      d: An interior planned around your clothes and accessories, with doors, drawers and lighting.
+      alt: Design concept of a dressing room with doors, drawers and hanging zones
+    - t: TV units
+      d: Walls and units that hide the cables and give you tidy storage and display.
+      alt: Design concept of a wood TV wall with a storage unit and shelves
+    - t: Bathroom units
+      d: Storage units and basins in materials that cope with moisture.
+      alt: Design concept of a wood bathroom vanity with a basin and mirror
+    - t: Custom joinery
+      d: Doors, desks, shelving and any wooden piece made to your brief.
+      alt: Design concept of a wooden door and built-in bookcase
+
+work:
+  title: Our work
+  lead: Designs and projects by sector. Press “Preview” for the details, or “Download” when the project file is available.
+  all: All
+  count: "Showing {n}"
+  preview: Preview
+  download: Download
+  soon: Soon
+  soon_toast: This project's file isn't available yet. It will be added soon.
+  concept: Design concept
+  completed: Completed project
+  concept_note: This is a Dusur design concept that shows our style. It is not a delivered project. Photos of completed work will replace it.
+  highlights: Highlights
+  open_external: Open full preview
+  ask: Ask about a similar project
+  ask_msg: "Hello Dusur, I'd like to ask about a project similar to: {title}"
+  empty: There are no projects in this sector yet.
+
+business:
+  title: For restaurants, cafes and shops
+  lead: We fit out your commercial space with woodwork made for heavy daily use, on a schedule that respects your opening date.
+  cards:
+    - t: Restaurants
+      items:
+        - Counters and reception desks
+        - Booths and fixed seating
+        - Wall cladding
+        - Storage and service units
+      alt: Design concept of fixed restaurant seating with pendant lights
+    - t: Cafes
+      items:
+        - Coffee bars and counters
+        - Display and product shelving
+        - Wooden tables and seating
+        - Interiors that express the place's identity
+      alt: Design concept of a wooden coffee bar with back shelves
+    - t: Shops
+      items:
+        - Display shelving and showcases
+        - Checkout counters
+        - Fitting rooms and stockrooms
+        - Units designed around your brand
+      alt: Design concept of a shop display wall and checkout counter
+  band:
+    - t: A quote with clear line items
+      d: Prepared from your drawings or site measurements, so you know what each item costs.
+    - t: A written work schedule
+      d: Stages and delivery dates agreed before work begins.
+    - t: Installation coordinated with you
+      d: We set installation times that suit how your business runs.
+  cta: Request a quote for your business
+  wa: Hello Dusur, I have a commercial project (restaurant / cafe / shop) and would like a quote
+
+contracting:
+  title: Joinery & contracting
+  lead: We work with contractors, developers and design offices to supply and build the woodwork in their projects.
+  cards:
+    - t: Joinery works
+      items:
+        - Wooden doors and frames
+        - Wall and ceiling cladding
+        - Built-in wardrobes and cabinets
+        - Desks and office fit-out
+        - Special pieces to your specification and drawings
+      alt: Design concept of slatted wall cladding with a flush door
+    - t: Contracting and finishing
+      items:
+        - Woodwork delivered within finishing packages
+        - Coordination with other trades on site
+        - Quality and schedule follow-up
+        - Handover against a clear item list
+      alt: Fit-out plan of a commercial space with dimensions and furniture layout
+  cta: Send your project drawings
+  wa: Hello Dusur, I have a contracting project and would like a price for the joinery works
+
+process:
+  title: How we work
+  lead: Four clear steps, and you always know what comes next.
+  steps:
+    - t: Site visit and measuring
+      d: We visit the site and take accurate measurements.
+    - t: 3D design
+      d: You review and adjust the design before work begins.
+    - t: Build and follow-up
+      d: We follow production and check quality before anything ships.
+    - t: Installation and handover
+      d: We install and hand over on the agreed date.
+
+contact:
+  title: Start your project
+  text: Tell us the type of space and its rough measurements, and we'll reply to arrange a site visit.
+  whatsapp: Message us on WhatsApp
+  call: Call us
+  wa: Hello Dusur, I'd like to ask about a design and build project
+  instagram: Instagram
+  facebook: Facebook
+  youtube: YouTube
+
+footer:
+  blurb: Custom woodwork in Egypt — kitchens, dressing rooms, TV and bathroom units, joinery and commercial fit-outs.
+  explore: Explore
+  reach: Get in touch
+  rights: Dusur Woodwork. All rights reserved.
+
+schema:
+  org_description: Dusur is an Egyptian custom woodwork company that designs and builds kitchens, dressing rooms, TV units, bathroom units, joinery, and restaurant, cafe and shop fit-outs.
+  services:
+    - name: Custom wood kitchens
+      description: Design, manufacture and installation of wood kitchens made to the client's space.
+    - name: Custom dressing rooms
+      description: Interior layouts, doors, drawers and lighting for dressing rooms and wardrobes.
+    - name: Wood TV units
+      description: TV walls and units with tidy storage, display and concealed cabling.
+    - name: Wood bathroom units
+      description: Storage units and basins in moisture-resistant materials.
+    - name: Custom joinery and woodwork
+      description: Doors, desks, shelving and made-to-order wooden pieces.
+    - name: Restaurant, cafe and shop fit-out
+      description: Counters, bars, display shelving and fixed seating for commercial spaces.
+    - name: Joinery and contracting for projects
+      description: Supply and installation of woodwork for contractors, developers and design offices.
+
+notfound:
+  title: Page not found
+  text: The link you opened is incorrect or has moved.
+  back: Back to home

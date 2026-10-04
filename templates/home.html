@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% import 'components/ui.html' as ui with context %}
+{% import 'components/project_card.html' as pc with context %}
+
+{% block main %}
+{#- ── Hero ───────────────────────────────────────────────────────────────── -#}
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap">
+    <div>
+      <h1 id="hero-h">{{ t.hero.title }}</h1>
+      <p>{{ t.hero.text }}</p>
+      <div class="cta-row">
+        {{ ui.btn(t.hero.cta, wa_link(t.contact.wa), 'primary', 'wa', external=True) }}
+        {{ ui.btn(t.hero.cta2, '#services', 'ghost') }}
+      </div>
+    </div>
+    <div class="hero__art glass" role="img" aria-label="{{ t.hero.art }}">
+      <svg viewBox="0 0 400 300" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="ja" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--joint-a1)"/><stop offset="1" style="stop-color:var(--joint-a2)"/></linearGradient>
+          <linearGradient id="jb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--joint-b1)"/><stop offset="1" style="stop-color:var(--joint-b2)"/></linearGradient>
+          <pattern id="jg" width="9" height="300" patternUnits="userSpaceOnUse"><path d="M2 0v300M6 0v300" stroke="rgba(0,0,0,.14)" stroke-width="1"/></pattern>
+        </defs>
+        <g class="j-a"><rect x="180" width="220" height="300" fill="url(#ja)"/><rect x="180" width="220" height="300" fill="url(#jg)"/></g>
+        <g class="j-b">
+          <polygon points="0,0 180,0 180,36 230,24 230,76 180,64 180,136 230,124 230,176 180,164 180,236 230,224 230,276 180,264 180,300 0,300" fill="url(#jb)" style="stroke:var(--joint-line)" stroke-opacity=".7" stroke-width="2.5" stroke-linejoin="round"/>
+          <polygon points="0,0 180,0 180,36 230,24 230,76 180,64 180,136 230,124 230,176 180,164 180,236 230,224 230,276 180,264 180,300 0,300" fill="url(#jg)"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+{#- ── Why Dusur ──────────────────────────────────────────────────────────── -#}
+<section class="section why" aria-labelledby="why-h">
+  <div class="wrap">
+    {{ ui.section_head('why-h', t.why.title, t.why.lead) }}
+    <div class="why__grid">
+      {%- for it in t.why['items'] %}
+      <div class="glass"><h3>{{ it.t }}</h3><p>{{ it.d }}</p></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{#- ── Services ───────────────────────────────────────────────────────────── -#}
+<section class="section" id="services" aria-labelledby="services-h">
+  <div class="wrap">
+    {{ ui.section_head('services-h', t.services.title, t.services.lead) }}
+    <ul class="svc glass">
+      {%- for it in t.services['items'] %}
+      <li>
+        {{ ui.media('site/' ~ svc_keys[loop.index0], it.alt, '(min-width: 760px) 180px, 92vw') }}
+        <h3>{{ it.t }}</h3>
+        <p>{{ it.d }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+{#- ── Our Work (portfolio) ───────────────────────────────────────────────── -#}
+<section class="section" id="work" aria-labelledby="work-h" data-toast="{{ t.work.soon_toast }}">
+  <div class="wrap">
+    {{ ui.section_head('work-h', t.work.title, t.work.lead) }}
+    <div class="filters" role="group" aria-label="{{ t.a11y.filter_group }}">
+      <button type="button" class="chip" aria-pressed="true" data-filter="all"><span>{{ t.work.all }}</span><b>{{ projects | length }}</b></button>
+      {%- for s in sectors %}
+      <button type="button" class="chip" aria-pressed="false" data-filter="{{ s.id }}"><span>{{ s.name }}</span><b>{{ s.count }}</b></button>
+      {%- endfor %}
+    </div>
+    <p class="count" data-tpl="{{ t.work.count }}" aria-live="polite"></p>
+    <ul class="projects" id="projects">
+      {%- for p in projects %}
+      {{ pc.card(p, loop.index0) }}
+      {%- endfor %}
+    </ul>
+    <p class="empty glass" hidden>{{ t.work.empty }}</p>
+  </div>
+</section>
+
+{#- ── For business ───────────────────────────────────────────────────────── -#}
+<section class="section" id="business" aria-labelledby="business-h">
+  <div class="wrap">
+    {{ ui.section_head('business-h', t.business.title, t.business.lead) }}
+    <div class="cards">
+      {%- for c in t.business.cards %}
+      <div class="glass glass--blur">
+        {{ ui.media('site/' ~ biz_keys[loop.index0], c.alt) }}
+        <h3>{{ c.t }}</h3>
+        {{ ui.ticks(c['items']) }}
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="band glass">
+      {%- for b in t.business.band %}
+      <div><h3>{{ b.t }}</h3><p>{{ b.d }}</p></div>
+      {%- endfor %}
+    </div>
+    <div class="cta-row">{{ ui.btn(t.business.cta, wa_link(t.business.wa), 'primary', 'wa', external=True) }}</div>
+  </div>
+</section>
+
+{#- ── Joinery & contracting ──────────────────────────────────────────────── -#}
+<section class="section" id="contracting" aria-labelledby="contracting-h">
+  <div class="wrap">
+    {{ ui.section_head('contracting-h', t.contracting.title, t.contracting.lead) }}
+    <div class="cards cards--2">
+      {%- for c in t.contracting.cards %}
+      <div class="glass glass--blur">
+        {{ ui.media('site/' ~ con_keys[loop.index0], c.alt, '(min-width: 1040px) 520px, 92vw') }}
+        <h3>{{ c.t }}</h3>
+        {{ ui.ticks(c['items']) }}
+      </div>
+      {%- endfor %}
+    </div>
+    <div class="cta-row">{{ ui.btn(t.contracting.cta, wa_link(t.contracting.wa), 'primary', 'wa', external=True) }}</div>
+  </div>
+</section>
+
+{#- ── How we work ────────────────────────────────────────────────────────── -#}
+<section class="section" id="process" aria-labelledby="process-h">
+  <div class="wrap">
+    {{ ui.section_head('process-h', t.process.title, t.process.lead) }}
+    <ol class="steps">
+      {%- for s in t.process.steps %}
+      <li class="glass"><h3>{{ s.t }}</h3><p>{{ s.d }}</p></li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+{#- ── Contact ────────────────────────────────────────────────────────────── -#}
+<section class="section" id="contact" aria-labelledby="contact-h">
+  <div class="wrap">
+    <div class="contact__box glass">
+      <h2 id="contact-h">{{ t.contact.title }}</h2>
+      <p>{{ t.contact.text }}</p>
+      <div class="cta-row">
+        {{ ui.btn(t.contact.whatsapp, wa_link(t.contact.wa), 'primary', 'wa', external=True) }}
+        <a class="btn btn--ghost" href="tel:{{ site.phone_e164 }}">{{ ui.icon('phone') }}<span class="phone">{{ site.phone_display }}</span></a>
+      </div>
+      {%- if socials %}
+      <div class="social">
+        {%- for s in socials %}
+        <a href="{{ s.url }}" target="_blank" rel="noopener">{{ ui.icon(s.icon) }}<span>{{ s.label }}</span></a>
+        {%- endfor %}
+      </div>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block after %}
+{% include 'components/project_dialog.html' %}
+{% endblock %}

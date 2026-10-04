@@ -1,0 +1,21 @@
+{% import 'components/ui.html' as ui with context %}
+{#- The preview window. Empty shell: assets/js/portfolio.js fills it from the card that was opened. -#}
+<dialog class="pv" id="pv" aria-labelledby="pv-title">
+  <button type="button" class="icon-btn pv__close" data-close aria-label="{{ t.a11y.close }}">{{ ui.icon('close') }}</button>
+  <div class="pv__grid">
+    <div class="pv__media" data-slot="media"></div>
+    <div class="pv__body">
+      <div class="tags" data-slot="tags"></div>
+      <h2 id="pv-title" data-slot="title"></h2>
+      <p data-slot="desc"></p>
+      <p class="pv__hl-title">{{ t.work.highlights }}</p>
+      <div data-slot="hl"></div>
+      <p class="pv__note" data-slot="note" hidden></p>
+      <div class="pv__foot" data-slot="foot"></div>
+      <div class="pv__step">
+        <button type="button" class="icon-btn" data-step="-1" aria-label="{{ t.a11y.prev }}">{{ ui.icon('chev', 'chev chev--prev') }}</button>
+        <button type="button" class="icon-btn" data-step="1" aria-label="{{ t.a11y.next }}">{{ ui.icon('chev', 'chev chev--next') }}</button>
+      </div>
+    </div>
+  </div>
+</dialog>

@@ -1,0 +1,37 @@
+# Portfolio sectors. They become the filter buttons on "Our Work" (in this order).
+# `kind` is the default placeholder drawing for projects in that sector.
+# Add a sector here and use its `id` in projects.yaml.
+- id: kitchens
+  kind: kitchen
+  nameAr: مطابخ
+  nameEn: Kitchens
+
+- id: dressing-rooms
+  kind: dressing
+  nameAr: غرف الملابس
+  nameEn: Dressing rooms
+
+- id: tv-units
+  kind: tv
+  nameAr: وحدات التلفاز
+  nameEn: TV units
+
+- id: bathrooms
+  kind: bath
+  nameAr: وحدات الحمامات
+  nameEn: Bathroom units
+
+- id: joinery
+  kind: joinery
+  nameAr: نجارة وأعمال خشبية
+  nameEn: Joinery & woodwork
+
+- id: commercial
+  kind: cafe
+  nameAr: مطاعم وكافيهات ومحلات
+  nameEn: Restaurants, cafes & shops
+
+- id: fit-out
+  kind: fitout
+  nameAr: مقاولات وتشطيب
+  nameEn: Contracting & fit-out

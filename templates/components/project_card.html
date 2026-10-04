@@ -1,0 +1,34 @@
+{% import 'components/ui.html' as ui with context %}
+{#- One portfolio card. Everything comes from content/projects.yaml. -#}
+{% macro card(p, i) %}
+<li class="card glass glass--blur" data-sector="{{ p.sector }}" data-id="{{ p.id }}" style="--i:{{ i }}">
+  {{ ui.media('projects/' ~ p.id, p.alt) }}
+  <div class="card__body">
+    <div class="tags">
+      <span class="tag">{{ p.sector_name }}</span>
+      <span class="tag{{ ' tag--accent' if p.status == 'completed' }}">{{ p.status_label }}</span>
+    </div>
+    <h3>{{ p.title }}</h3>
+    <p>{{ p.description }}</p>
+    <div class="actions">
+      <a class="btn btn--primary btn--sm" href="#project-{{ p.id }}" data-preview="{{ p.id }}">{{ ui.icon('eye') }}<span>{{ t.work.preview }}</span></a>
+      {%- if p.download %}
+      <a class="btn btn--ghost btn--sm" href="{{ p.download }}" download>{{ ui.icon('download') }}<span>{{ t.work.download }}</span></a>
+      {%- else %}
+      <button type="button" class="btn btn--ghost btn--sm" aria-disabled="true" data-soon>{{ ui.icon('download') }}<span>{{ t.work.download }}</span><small>{{ t.work.soon }}</small></button>
+      {%- endif %}
+    </div>
+  </div>
+  {#- Extra content for the preview window. Inert until the visitor opens it. -#}
+  <template class="pv-src">
+    {{ ui.ticks(p.highlights) }}
+    {%- if p.status != 'completed' %}
+    <p class="note">{{ t.work.concept_note }}</p>
+    {%- endif %}
+    {%- if p.preview_url %}
+    <a class="btn btn--ghost btn--sm" href="{{ p.preview_url }}" target="_blank" rel="noopener">{{ ui.icon('external') }}<span>{{ t.work.open_external }}</span></a>
+    {%- endif %}
+    <a class="btn btn--primary btn--sm" href="{{ p.ask_url }}" target="_blank" rel="noopener">{{ ui.icon('wa') }}<span>{{ t.work.ask }}</span></a>
+  </template>
+</li>
+{% endmacro %}

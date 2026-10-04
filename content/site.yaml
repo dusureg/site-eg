@@ -1,0 +1,39 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Dusur — site settings.  Edit, then run:  python build.py
+# ─────────────────────────────────────────────────────────────────────────────
+
+# The public address of the site, no trailing slash. It feeds canonical links, hreflang,
+# social-share links and the sitemap, so set it to the address people will really visit:
+#   GitHub project site : https://YOUR-USERNAME.github.io/REPO-NAME
+#   Custom domain       : https://www.dusur.com
+site_url: "https://YOUR-USERNAME.github.io/dusur"
+
+# WhatsApp number: international format, digits only (Egypt = 20, drop the leading 0).
+whatsapp: "201090779706"
+phone_display: "01090779706"
+phone_e164: "+201090779706"
+country: EG
+
+# Social profiles: paste the full address, or leave "" to hide the icon.
+social:
+  instagram: ""
+  facebook: ""
+  youtube: ""
+
+# Browser toolbar colour (mobile) for each theme.
+theme_color_dark: "#120E0B"
+theme_color_light: "#F6F0E6"
+
+# Pictures used by the sections (not the portfolio). Until you add a real photo they show
+# generated art; to replace one, save a photo as  media/site/<key>.jpg  and rebuild.
+section_media:
+  svc-kitchen:   {kind: kitchen,    tone: walnut}
+  svc-dressing:  {kind: dressing,   tone: linen}
+  svc-tv:        {kind: tv,         tone: copper}
+  svc-bath:      {kind: bath,       tone: ebony}
+  svc-joinery:   {kind: joinery,    tone: oak}
+  biz-restaurant: {kind: restaurant, tone: copper}
+  biz-cafe:      {kind: cafe,       tone: walnut}
+  biz-shop:      {kind: shop,       tone: oak}
+  con-woodwork:  {kind: cladding,   tone: moss}
+  con-fitout:    {kind: fitout,     tone: ebony}

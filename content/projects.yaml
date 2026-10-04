@@ -1,0 +1,266 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Our Work — one entry per project.  After editing run:  python build.py
+#
+# Fields
+#   id             short English name, lowercase with dashes. Used for the file names below.
+#   sector         one of the ids in sectors.yaml
+#   titleAr/En     project name
+#   descriptionAr/En   one or two sentences (shown on the card)
+#   highlightsAr/En    three short points (shown in the preview window)
+#   status         concept   -> labelled "Design concept" (3D render / idea, not a delivered job)
+#                  completed -> labelled "Completed project"  (use only for real, delivered work)
+#   placeholder    the drawing shown until a real photo exists
+#                    kind: kitchen | dressing | tv | bath | joinery | restaurant | cafe | shop | cladding | fitout
+#                    tone: walnut | ebony | oak | linen | copper | moss
+#   image          optional. A file name inside media/projects/.  If you leave it empty, the build
+#                  automatically uses media/projects/<id>.jpg (or .png / .webp) when that file exists.
+#   previewUrl     optional link for "Open full preview" (a 3D viewer, a PDF, a video ...)
+#   downloadUrl    optional. Empty = the build uses files/<id>.pdf (or .zip, .dwg ...) when it exists.
+#                  If no file exists the Download button shows a polite "coming soon" state.
+#
+# To publish a real project:
+#   1. copy the photo to   media/projects/<id>.jpg
+#   2. copy the brochure to files/<id>.pdf        (optional)
+#   3. change   status: concept   to   status: completed
+#   4. python build.py
+# ─────────────────────────────────────────────────────────────────────────────
+
+- id: walnut-linear-kitchen
+  sector: kitchens
+  status: concept
+  placeholder: {kind: kitchen, tone: walnut}
+  titleAr: مطبخ عصري بخطوط مستقيمة وخشب الجوز
+  titleEn: Modern linear walnut kitchen
+  descriptionAr: مطبخ هادئ بتصميم بسيط وألواح بلون الجوز الدافئ، مع عمود تخزين طويل ومساحة عمل واسعة.
+  descriptionEn: A calm, clean-lined kitchen in warm walnut tones with a tall storage column and a generous worktop.
+  highlightsAr:
+    - تخطيط مدروس حول طريقة الطهي
+    - وحدات علوية وسفلية بأسطح خشبية
+    - إضاءة دافئة تحت الوحدات
+  highlightsEn:
+    - Layout planned around how you cook
+    - Wood-finish wall and base units
+    - Warm lighting under the units
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""
+
+- id: oak-family-kitchen
+  sector: kitchens
+  status: concept
+  placeholder: {kind: kitchen, tone: oak}
+  titleAr: مطبخ عائلي بدرجات البلوط الفاتحة
+  titleEn: Light oak family kitchen
+  descriptionAr: وحدات بمقابض عملية وأسطح تتحمل الاستخدام اليومي، مصممة لعائلة تطبخ كل يوم.
+  descriptionEn: Practical handles and hard-wearing surfaces, designed for a household that cooks every day.
+  highlightsAr:
+    - مقابض عملية سهلة الاستخدام
+    - تخزين إضافي لأدوات الطبخ
+    - ألوان فاتحة تزيد إحساس الاتساع
+  highlightsEn:
+    - Easy-to-use handles
+    - Extra storage for cookware
+    - Light tones that open up the room
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""
+
+- id: walk-in-dressing-room
+  sector: dressing-rooms
+  status: concept
+  placeholder: {kind: dressing, tone: linen}
+  titleAr: غرفة ملابس مفتوحة بإضاءة مخفية
+  titleEn: Walk-in dressing room with hidden lighting
+  descriptionAr: تقسيم داخلي للفساتين والقمصان والأحذية، مع وحدة أدراج ومقعد جلوس.
+  descriptionEn: An interior planned for dresses, shirts and shoes, with a drawer bank and a seating bench.
+  highlightsAr:
+    - مناطق تعليق بارتفاعات مختلفة
+    - أدراج للإكسسوارات
+    - إضاءة مخفية داخل الوحدات
+  highlightsEn:
+    - Hanging zones at different heights
+    - Drawers for accessories
+    - Concealed lighting inside the units
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""
+
+- id: glass-door-wardrobe
+  sector: dressing-rooms
+  status: concept
+  placeholder: {kind: dressing, tone: ebony}
+  titleAr: دولاب بأبواب زجاجية ووحدة أدراج
+  titleEn: Glass-door wardrobe with drawer bank
+  descriptionAr: أبواب زجاجية تعرض المقتنيات، وأبواب خشبية مصمتة للتخزين اليومي.
+  descriptionEn: Glass doors that display your pieces, solid wood doors for everyday storage.
+  highlightsAr:
+    - أبواب زجاجية للعرض
+    - أدراج بمقابض بسيطة
+    - تقسيم يناسب الاستخدام اليومي
+  highlightsEn:
+    - Glass doors for display
+    - Drawers with simple handles
+    - A layout built for daily use
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""
+
+- id: slatted-tv-wall
+  sector: tv-units
+  status: concept
+  placeholder: {kind: tv, tone: copper}
+  titleAr: حائط تلفاز بشرائح خشبية
+  titleEn: Slatted wood TV wall
+  descriptionAr: حائط خشبي بشرائح رأسية يحيط بالشاشة، مع وحدة تخزين سفلية ورفوف جانبية للعرض.
+  descriptionEn: A vertical-slat wood feature wall around the screen, with a low storage unit and side shelves for display.
+  highlightsAr:
+    - تمرير الأسلاك داخل الحائط
+    - وحدة سفلية بأدراج واسعة
+    - رفوف جانبية للكتب والديكور
+  highlightsEn:
+    - Cables routed inside the wall
+    - A low unit with wide drawers
+    - Side shelves for books and décor
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""
+
+- id: arch-mirror-vanity
+  sector: bathrooms
+  status: concept
+  placeholder: {kind: bath, tone: linen}
+  titleAr: وحدة حمام بمرآة مقوّسة
+  titleEn: Bathroom vanity with an arched mirror
+  descriptionAr: وحدة معلّقة بأدراج واسعة وحوض فوق السطح، مع مرآة مقوّسة وإضاءة جانبية.
+  descriptionEn: A wall-hung unit with wide drawers and a countertop basin, finished with an arched mirror and side lights.
+  highlightsAr:
+    - خامات تتحمل الرطوبة
+    - وحدة معلّقة تسهّل التنظيف
+    - عمود تخزين جانبي للمناشف
+  highlightsEn:
+    - Moisture-resistant materials
+    - A wall-hung unit that is easy to clean
+    - A side column for towels
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""
+
+- id: panelled-door-and-shelving
+  sector: joinery
+  status: concept
+  placeholder: {kind: joinery, tone: oak}
+  titleAr: باب خشبي مخصص مع مكتبة مدمجة
+  titleEn: Custom panelled door with built-in shelving
+  descriptionAr: باب بحشوات مصنوع حسب الطلب بجوار مكتبة مدمجة بأرفف بارتفاعات مختلفة.
+  descriptionEn: A made-to-order panelled door beside a built-in bookcase with shelves at different heights.
+  highlightsAr:
+    - حشوات متناسقة مع الإطار
+    - أرفف بارتفاعات مختلفة
+    - تشطيب موحّد للباب والمكتبة
+  highlightsEn:
+    - Panels matched to the frame
+    - Shelves at varied heights
+    - One finish across door and shelving
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""
+
+- id: fluted-wall-cladding
+  sector: joinery
+  status: concept
+  placeholder: {kind: cladding, tone: moss}
+  titleAr: تكسية حائط بشرائح خشبية مع باب مخفي
+  titleEn: Fluted wall cladding with a flush door
+  descriptionAr: شرائح خشبية متتابعة تغطي الحائط وتُدمج الباب في التصميم، مع إضاءة جانبية هادئة.
+  descriptionEn: Continuous wood slats cover the wall and blend the door into the design, with soft side lighting.
+  highlightsAr:
+    - باب مدمج مع الحائط
+    - إيقاع شرائح متنوع العرض
+    - إضاءة جانبية هادئة
+  highlightsEn:
+    - A door set flush with the wall
+    - Slats in varied widths
+    - Soft side lighting
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""
+
+- id: specialty-coffee-bar
+  sector: commercial
+  status: concept
+  placeholder: {kind: cafe, tone: walnut}
+  titleAr: بار لكافيه قهوة متخصصة
+  titleEn: Specialty coffee bar
+  descriptionAr: كاونتر بواجهة شرائح خشبية ورفوف خلفية للأكواب والعبوات، مع جلسات على البار.
+  descriptionEn: A counter with a slatted wood front and back shelves for cups and jars, with seating along the bar.
+  highlightsAr:
+    - واجهة شرائح تتحمل الاستخدام المكثف
+    - رفوف عرض خلفية
+    - أماكن مخصصة للماكينات والمعدات
+  highlightsEn:
+    - A slatted front built for heavy use
+    - Back-bar display shelving
+    - Dedicated spots for machines and equipment
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""
+
+- id: restaurant-banquette-seating
+  sector: commercial
+  status: concept
+  placeholder: {kind: restaurant, tone: copper}
+  titleAr: جلسات ثابتة لمطعم
+  titleEn: Restaurant banquette seating
+  descriptionAr: كنبة ممتدة بظهر مبطّن وتفاصيل خشبية أمام حائط بشرائح، لتوزيع طاولات منظم.
+  descriptionEn: A long upholstered banquette with wood details against a slatted wall, for a tidy table layout.
+  highlightsAr:
+    - مقاعد ثابتة تُحسّن استغلال المساحة
+    - ظهر مبطّن مريح
+    - إضاءة معلّقة فوق الطاولات
+  highlightsEn:
+    - Fixed seating that uses space well
+    - A comfortable upholstered back
+    - Pendant lighting over the tables
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""
+
+- id: retail-display-wall
+  sector: commercial
+  status: concept
+  placeholder: {kind: shop, tone: oak}
+  titleAr: حائط عرض وكاونتر لمحل تجاري
+  titleEn: Retail display wall and checkout counter
+  descriptionAr: أرفف عرض بخانات متعددة مع كاونتر دفع ولوحة اسم، بتصميم يناسب هوية العلامة.
+  descriptionEn: Multi-bay display shelving with a checkout counter and name panel, designed around the brand's identity.
+  highlightsAr:
+    - خانات عرض بأحجام متنوعة
+    - كاونتر دفع عملي
+    - لوحة اسم تُبرز العلامة
+  highlightsEn:
+    - Display bays in varied sizes
+    - A practical checkout counter
+    - A name panel that features the brand
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""
+
+- id: shop-fit-out-layout
+  sector: fit-out
+  status: concept
+  placeholder: {kind: fitout, tone: ebony}
+  titleAr: مخطط تجهيز محل تجاري
+  titleEn: Shop fit-out layout
+  descriptionAr: مخطط توزيع يوضح مناطق العرض والخدمة والتخزين قبل بدء التنفيذ، مرفق بقائمة بنود واضحة.
+  descriptionEn: A plan showing display, service and storage zones before work starts, supplied with a clear itemised list.
+  highlightsAr:
+    - توزيع مناطق العرض والخدمة
+    - مقاسات وأبعاد واضحة
+    - قائمة بنود قبل التنفيذ
+  highlightsEn:
+    - Display and service zones mapped out
+    - Clear dimensions
+    - An itemised list before work begins
+  image: ""
+  previewUrl: ""
+  downloadUrl: ""

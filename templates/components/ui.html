@@ -1,0 +1,46 @@
+{#- Reusable building blocks. Import with:  {% import 'components/ui.html' as ui with context %} -#}
+
+{% macro icon(name, cls='') -%}
+<svg class="ic{{ ' ' ~ cls if cls }}" aria-hidden="true" focusable="false"><use href="#i-{{ name }}"/></svg>
+{%- endmacro %}
+
+{#- Button / link-button. variant: primary | ghost.  size: 'sm' for compact. -#}
+{% macro btn(label, href, variant='primary', icon_name=None, size=None, external=False, cls='') -%}
+<a class="btn btn--{{ variant }}{{ ' btn--sm' if size == 'sm' }}{{ ' ' ~ cls if cls }}" href="{{ href }}"{% if external %} target="_blank" rel="noopener"{% endif %}>
+  {%- if icon_name %}{{ icon(icon_name) }}{% endif -%}<span>{{ label }}</span></a>
+{%- endmacro %}
+
+{#- Picture frame used for EVERY image on the site.
+    key  : "site/svc-kitchen" or "projects/<id>"  ->  generated art  assets/ph/<key>.svg
+                                                   ->  your photo     media/<key>.jpg (picked up by the build)
+    The frame has a fixed aspect ratio, so swapping art for a photo never moves the layout. -#}
+{% macro media(key, alt, sizes='(min-width: 1040px) 360px, (min-width: 640px) 45vw, 92vw', eager=False) -%}
+{%- set m = media_info(key) -%}
+<figure class="media{{ ' has-img' if m }}">
+  <img class="media__ph" src="{{ base }}assets/ph/{{ key | replace('/', '-') }}.svg" alt="{{ '' if m else alt }}" width="800" height="600"{% if not eager %} loading="lazy"{% endif %} decoding="async">
+  {%- if m %}
+  <picture>
+    {%- for s in m.sources %}
+    <source type="{{ s.type }}" srcset="{{ s.srcset }}" sizes="{{ sizes }}">
+    {%- endfor %}
+    <img class="media__img" src="{{ m.src }}" srcset="{{ m.srcset }}" sizes="{{ sizes }}" width="{{ m.w }}" height="{{ m.h }}" alt="{{ alt }}"{% if not eager %} loading="lazy"{% endif %} decoding="async">
+  </picture>
+  {%- endif %}
+</figure>
+{%- endmacro %}
+
+{% macro section_head(id, title, lead=None) -%}
+<div class="section__head">
+  <h2 id="{{ id }}">{{ title }}</h2>
+  {%- if lead %}
+  <p class="lead">{{ lead }}</p>{% endif %}
+</div>
+{%- endmacro %}
+
+{% macro ticks(items) -%}
+<ul class="tick">{% for i in items %}<li>{{ i }}</li>{% endfor %}</ul>
+{%- endmacro %}
+
+{% macro logo(kind, label) -%}
+<span class="logo logo--{{ kind }}" role="img" aria-label="{{ label }}" style="--m:url({{ base }}assets/brand/logo-{{ kind }}.svg)"></span>
+{%- endmacro %}
