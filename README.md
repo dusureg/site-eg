@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Dusur website · موقع دسر
 
 A fast, bilingual (Arabic / English) site with dark and light themes and a filterable "Our work" section.
@@ -108,3 +109,6 @@ The site uses **Readex Pro** (Arabic + Latin) from Google Fonts, loaded without 
 - [ ] Social links added (optional)
 - [ ] Real photos added as you finish projects, and `status` changed to `completed`
 - [ ] `python build.py`, then commit and push `docs/`
+=======
+# site-eg
+>>>>>>> f159e17c5cb5769fce7522eff5067e46062fc01e
